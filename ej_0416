@@ -1,0 +1,20 @@
+#recuerden comentar de que trata su codigo
+
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('data.txt', sep='\t')
+
+
+filtro = (df['x'] <= 24325 + 200) & (df['x'] >= 24325 - 200) & (df['y'] <= 25175 + 200) & (df['y'] >= 25175 - 200) & (df['z'] <= 3500)
+df_filtrado = df[filtro]
+
+print(df_filtrado.describe())
+
+mu = 0.572
+sigma = 0.103
+samples = np.random.normal(mu, sigma, 126075)
+
+df_filtrado['ley2'] = samples
+print(df_filtrado.head())
+print(df_filtrado.describe())

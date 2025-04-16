@@ -85,5 +85,4 @@ for i in range(len(df)):
     if df.iloc[i][4] >= 0:
         df.iat[i, 5] = 1
 
-
-print(df.describe())
+print(df['state'].value_counts())
